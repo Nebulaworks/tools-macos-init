@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-##
+###
 # title             : NWI MacOS bootstrapper
 # file              : shell script
 # created           : 2017-11
@@ -10,7 +9,7 @@
 # description       : Nebulaworks Mac OS configuration script
 # 										run script in terminal as standard user
 # executor-version  : bash
-##
+###
 
 ###
 # Nebulaworks Mac OS configuration script
