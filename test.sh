@@ -14,8 +14,8 @@ then
   echo "minikube installer"
   echo ""
   echo "Commands:"
-  echo "  install     installs the minikube software stack"
-  echo "  cleanup     uninstalls the minikuve software stack"
+  echo "  engineer   installs the minikube software stack"
+  echo "  sales      uninstalls the minikuve software stack"
   exit $E_ARG_ERR
 fi
 
