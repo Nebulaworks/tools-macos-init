@@ -75,6 +75,15 @@ prereq_prep (){
 	echo " continuing to configure system for $*...."
 }
 
+base_install (){
+	for app in "${base_cli[@]}"; do
+		brew_install "$app"
+	done
+	for app in "${base_cask[@]}"; do
+		brew_install "$app"
+	done
+}
+
 if [ -z "$1" ]
 then
   # echo "Usage:  $0 COMMAND"
@@ -89,16 +98,11 @@ then
 fi
 
 prereq_prep $1
+base_install
 
 case $1 in
 	sales)
 		echo " heck I'm in sales so I don't need all that engineering junk!"
-		for app in "${base_cli[@]}"; do
-			brew_install "$app"
-		done
-		for app in "${base_cask[@]}"; do
-			brew_install "$app"
-		done
 		;;
 	engineer)
 		echo " time to powerup! gimme all that sweet sweet tool luv!!!"
