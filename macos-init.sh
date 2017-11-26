@@ -87,7 +87,17 @@ then
 fi
 
 prereq_prep $1
-
+case $1 in
+	sales)
+		echo "heck I'm in sales so I don't need all that engineering junk!"
+		;;
+	engineer)
+		echo "time to powerup! gimme all that sweet sweet tool luv!!!"
+		;;
+	*)
+		echo "hmmm, I don't recognize that role.  you should check the help docs"
+		;;
+esac
 # install oh-my-zsh framework
 # curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
