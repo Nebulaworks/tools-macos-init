@@ -43,7 +43,8 @@ base_cask=(
 # engineering cli tools
 eng_cli=(
 	'shellcheck' 'file-formula' 'rsync' 'jq' 'httpie' 'htop-osx' 'nmap' 'tmux' 'openssh'
-	'vim --with-override-system-vi --with-lua --without-perl' 'zsh' 'kubectl' 'awscli'
+	'vim --with-override-system-vi --with-lua --without-perl' 'zsh' 'kubectl' 'terraform'
+	'awscli' 'azure-cli' 'tree'
 );
 
 # engineering cask tools
@@ -114,6 +115,9 @@ case $1 in
 		done
 		# install oh-my-zsh framework
 		curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+		if [ ! -f "$HOME/.vimrc" ]; then
+  		touch "$HOME/.vimrc"
+		fi
 		;;
 	*)
 		echo " hmmm, I don't recognize that role.  you should check the help docs"
