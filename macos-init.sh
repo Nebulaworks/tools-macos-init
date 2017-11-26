@@ -106,14 +106,19 @@ case $1 in
 		;;
 	engineer)
 		echo " time to powerup! gimme all that sweet sweet tool luv!!!"
+		for app in "${eng_cli[@]}"; do
+			brew_install "$app"
+		done
+		for app in "${eng_cask[@]}"; do
+			brew_install "$app"
+		done
+		# install oh-my-zsh framework
+		curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 		;;
 	*)
 		echo " hmmm, I don't recognize that role.  you should check the help docs"
 		;;
 esac
-# install oh-my-zsh framework
-# curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
 
 #custom vimrc
 
