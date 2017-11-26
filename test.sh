@@ -64,6 +64,6 @@ else
 	echo 'Yay! you can brew'
 fi
 
-for a in "${app[@]}"; do
-	brew_install "$a"
-done
+# for a in "${app[@]}"; do
+# 	brew_install "$a"
+# done
