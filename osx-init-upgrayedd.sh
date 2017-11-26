@@ -56,18 +56,6 @@ command_exists() {
 	command -v "$@" > /dev/null 2>&1
 }
 
-if [ -z "$1" ]
-then
-  echo "Usage:  $0 COMMAND"
-  echo ""
-  echo "minikube installer"
-  echo ""
-  echo "Commands:"
-  echo "  engineer   installs the minikube software stack"
-  echo "  sales      uninstalls the minikuve software stack"
-  exit $E_ARG_ERR
-fi
-
 brew_install() {
 	brew install "$@"
 }
@@ -76,14 +64,18 @@ brew_cask_install() {
 	brew cask install "$@"
 }
 
-if ! command_exists 'brew'; then
-  echo 'Info: brew is not installed.' >&2
-  echo 'Installing HomeBrew package manager.... '
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+prereq_prep (){
+	echo " checking for system prerequisites...."
+	if ! command_exists 'brew'; then
+	  echo "Info: brew is not installed." >&2
+	  echo "Installing HomeBrew package manager.... "
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	fi
+	echo " continuing to configure system for $@...."
+}
 
 # install oh-my-zsh framework
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+# curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 
 #custom vimrc
@@ -96,3 +88,16 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 # set shiftwidth=2
 # set softtabstop=2
 # SQRL
+if [ -z "$1" ]
+then
+  echo "Usage:  $0 COMMAND"
+  echo ""
+  echo "minikube installer"
+  echo ""
+  echo "Commands:"
+  echo "  engineer   installs the minikube software stack"
+  echo "  sales      uninstalls the minikuve software stack"
+  exit $E_ARG_ERR
+fi
+
+prereq_prep $1
