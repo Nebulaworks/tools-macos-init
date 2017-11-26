@@ -70,7 +70,7 @@ prereq_prep (){
 	  echo "Installing HomeBrew package manager.... "
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
-	echo " continuing to configure system for$*...."
+	echo " continuing to configure system for $*...."
 }
 
 if [ -z "$1" ]
