@@ -56,11 +56,13 @@ command_exists() {
 }
 
 brew_install() {
-	brew install "$@"
+	# brew install "$@"
+	echo "$@"
 }
 
 brew_cask_install() {
-	brew cask install "$@"
+	# brew cask install "$@"
+		echo "$@"
 }
 
 prereq_prep (){
@@ -87,15 +89,22 @@ then
 fi
 
 prereq_prep $1
+
 case $1 in
 	sales)
-		echo "heck I'm in sales so I don't need all that engineering junk!"
+		echo " heck I'm in sales so I don't need all that engineering junk!"
+		for app in "${base_cli[@]}"; do
+			brew_install "$app"
+		done
+		for app in "${base_cask[@]}"; do
+			brew_install "$app"
+		done
 		;;
 	engineer)
-		echo "time to powerup! gimme all that sweet sweet tool luv!!!"
+		echo " time to powerup! gimme all that sweet sweet tool luv!!!"
 		;;
 	*)
-		echo "hmmm, I don't recognize that role.  you should check the help docs"
+		echo " hmmm, I don't recognize that role.  you should check the help docs"
 		;;
 esac
 # install oh-my-zsh framework
