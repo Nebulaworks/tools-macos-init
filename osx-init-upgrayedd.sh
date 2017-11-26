@@ -63,8 +63,8 @@ then
   echo "minikube installer"
   echo ""
   echo "Commands:"
-  echo "  install     installs the minikube software stack"
-  echo "  cleanup     uninstalls the minikuve software stack"
+  echo "  engineer   installs the minikube software stack"
+  echo "  sales      uninstalls the minikuve software stack"
   exit $E_ARG_ERR
 fi
 
@@ -84,3 +84,15 @@ fi
 
 # install oh-my-zsh framework
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+
+#custom vimrc
+
+# sudo -u ubuntu tee /home/ubuntu/.vimrc <<SQRL
+# syntax on
+# set autoindent
+# set expandtab
+# set number
+# set shiftwidth=2
+# set softtabstop=2
+# SQRL
