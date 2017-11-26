@@ -70,8 +70,23 @@ prereq_prep (){
 	  echo "Installing HomeBrew package manager.... "
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
-	echo " continuing to configure system for $@...."
+	echo " continuing to configure system for " "$@" "...."
 }
+
+if [ -z "$1" ]
+then
+  # echo "Usage:  $0 COMMAND"
+	echo "Usage:  macos-init COMMAND"
+  echo ""
+  echo "macos system initializer"
+  echo ""
+  echo "Commands:"
+  echo "  sales      configure system for sales role"
+  echo "  engineer   configure system for engineering role"
+  exit $E_ARG_ERR
+fi
+
+prereq_prep $1
 
 # install oh-my-zsh framework
 # curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -87,16 +102,3 @@ prereq_prep (){
 # set shiftwidth=2
 # set softtabstop=2
 # SQRL
-if [ -z "$1" ]
-then
-  echo "Usage:  $0 COMMAND"
-  echo ""
-  echo "minikube installer"
-  echo ""
-  echo "Commands:"
-  echo "  engineer   installs the minikube software stack"
-  echo "  sales      uninstalls the minikuve software stack"
-  exit $E_ARG_ERR
-fi
-
-prereq_prep $1
