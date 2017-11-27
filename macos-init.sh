@@ -142,7 +142,7 @@ case $1 in
 			EOF
 		fi
 		# install oh-my-zsh framework
-		# curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+		curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 		;;
 	*)
 		echo " hmmm, I don't recognize that role.  you should check the help docs"
