@@ -62,7 +62,7 @@ command_exists() {
 }
 
 brew_install() {
-	brew install "$@"
+	brew install $@
 	# echo "$@"
 }
 
