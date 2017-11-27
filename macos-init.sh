@@ -117,14 +117,14 @@ case $1 in
 		# configure vim with custom vimrc
 		if [ ! -f "$HOME/.vimrc" ]; then
 			touch "$HOME/.vimrc"
-			# sudo -u ubuntu tee $HOME/.vimrc <<-EOF
-			# syntax on
-			# set autoindent
-			# set expandtab
-			# set number
-			# set shiftwidth=2
-			# set softtabstop=2
-			# EOF
+			tee $HOME/.vimrc <<-EOF
+			syntax on
+			set autoindent
+			set expandtab
+			set number
+			set shiftwidth=2
+			set softtabstop=2
+			EOF
 		fi
 		# install oh-my-zsh framework
 		curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
