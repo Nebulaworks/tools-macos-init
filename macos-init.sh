@@ -57,13 +57,13 @@ command_exists() {
 }
 
 brew_install() {
-	# brew install "$@"
-	echo "$@"
+	brew install "$@"
+	# echo "$@"
 }
 
 brew_cask_install() {
-	# brew cask install "$@"
-		echo "$@"
+	brew cask install "$@"
+	# echo "$@"
 }
 
 prereq_prep (){
