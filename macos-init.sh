@@ -33,7 +33,7 @@ base_cli=(
 
 # base common cask tools
 base_cask=(
-	'slack' 'google-drive-file-stream' 'google-chrome' '1password' 'zoom'
+	'slack' 'google-drive-file-stream' 'google-chrome' '1password'
 );
 
 ###
@@ -142,7 +142,7 @@ case $1 in
 			EOF
 		fi
 		# install oh-my-zsh framework
-		curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+		# curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 		;;
 	*)
 		echo " hmmm, I don't recognize that role.  you should check the help docs"
