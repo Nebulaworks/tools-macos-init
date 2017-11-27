@@ -24,7 +24,7 @@ set -e
 
 # base conmmon cli tools
 base_cli=(
-	'coreutils' 'diffutils' 'gnu-indent --with-default-names' 'gnu-sed --with-default-names'
+	'coreutils' 'diffutils' gnu-indent\ --with-default-names 'gnu-sed --with-default-names'
 	'gnu-tar --with-default-names' 'gnu-which --with-default-names' 'ed --with-default-names'
 	'findutils --with-default-names' 'grep --with-default-names' 'wdiff --with-gettext'
 	'ccat' 'gawk' 'gnutls' 'gzip' 'unzip' 'watch' 'wget' 'bash' 'less' 'most' 'make'
