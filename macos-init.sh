@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# shellcheck disable=SC2068
 ###
 # title             : NWI MacOS bootstrapper
 # file              : shell script
@@ -24,7 +24,7 @@ set -e
 
 # base conmmon cli tools
 base_cli=(
-	'coreutils' 'diffutils' gnu-indent\ --with-default-names 'gnu-sed --with-default-names'
+	'coreutils' 'diffutils' 'gnu-indent --with-default-names' 'gnu-sed --with-default-names'
 	'gnu-tar --with-default-names' 'gnu-which --with-default-names' 'ed --with-default-names'
 	'findutils --with-default-names' 'grep --with-default-names' 'wdiff --with-gettext'
 	'ccat' 'gawk' 'gnutls' 'gzip' 'unzip' 'watch' 'wget' 'bash' 'less' 'most' 'make'
@@ -67,12 +67,12 @@ brew_install() {
 }
 
 brew_cask_install() {
-	brew cask install "$@"
+	brew cask install $@
 	# echo "$@"
 }
 
 apm_install() {
-	apm install "$@"
+	apm install $@
 }
 
 prereq_prep (){
