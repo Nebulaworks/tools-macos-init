@@ -107,15 +107,18 @@ then
   exit $E_ARG_ERR
 fi
 
-prereq_prep $1
-base_install
-
 case $1 in
 	sales)
 		echo " heck I'm in sales so I don't need all that engineering tools junk!"
+		# install base apps
+		prereq_prep $1
+		base_install
 		;;
 	engineer)
 		echo " time to powerup! gimme all that sweet sweet tool luv!!!"
+		# install base apps
+		prereq_prep $1
+		base_install
 		# install engineering apps
 		for app in "${eng_cli[@]}"; do
 			brew_install "$app"
