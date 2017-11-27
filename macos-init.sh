@@ -103,34 +103,33 @@ base_install
 
 case $1 in
 	sales)
-		echo " heck I'm in sales so I don't need all that engineering junk!"
+		echo " heck I'm in sales so I don't need all that engineering tools junk!"
 		;;
 	engineer)
 		echo " time to powerup! gimme all that sweet sweet tool luv!!!"
+		# install engineering apps
 		for app in "${eng_cli[@]}"; do
 			brew_install "$app"
 		done
 		for app in "${eng_cask[@]}"; do
 			brew_install "$app"
 		done
+		# configure vim with custom vimrc
+		if [ ! -f "$HOME/.vimrc" ]; then
+			touch "$HOME/.vimrc"
+			# sudo -u ubuntu tee $HOME/.vimrc <<-EOF
+			# syntax on
+			# set autoindent
+			# set expandtab
+			# set number
+			# set shiftwidth=2
+			# set softtabstop=2
+			# EOF
+		fi
 		# install oh-my-zsh framework
 		curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-		if [ ! -f "$HOME/.vimrc" ]; then
-  		touch "$HOME/.vimrc"
-		fi
 		;;
 	*)
 		echo " hmmm, I don't recognize that role.  you should check the help docs"
 		;;
 esac
-
-#custom vimrc
-
-# sudo -u ubuntu tee /home/ubuntu/.vimrc <<SQRL
-# syntax on
-# set autoindent
-# set expandtab
-# set number
-# set shiftwidth=2
-# set softtabstop=2
-# SQRL
