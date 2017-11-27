@@ -90,7 +90,7 @@ base_install (){
 		brew_install "$app"
 	done
 	for app in "${base_cask[@]}"; do
-		brew_install "$app"
+		brew_cask_install "$app"
 	done
 }
 
@@ -124,7 +124,7 @@ case $1 in
 			brew_install "$app"
 		done
 		for app in "${eng_cask[@]}"; do
-			brew_install "$app"
+			brew_cask_install "$app"
 		done
 		for app in "${eng_apm[@]}"; do
 			apm_install "$app"
