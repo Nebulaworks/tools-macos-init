@@ -52,6 +52,11 @@ eng_cask=(
 	'docker' 'iterm2' 'tunnelblick' 'atom' 'firefox'
 );
 
+eng_apm=(
+	'git-plus' 'ex-mode' 'markdown-preview-plus' 'markdown-pdf' 'vim-mode-plus'
+	'linter-shellcheck' 'terraform-fmt' 'linter-terraform-syntax'
+);
+
 command_exists() {
 	command -v "$@" > /dev/null 2>&1
 }
@@ -64,6 +69,10 @@ brew_install() {
 brew_cask_install() {
 	brew cask install "$@"
 	# echo "$@"
+}
+
+apm_install() {
+	apm install "$@"
 }
 
 prereq_prep (){
@@ -113,6 +122,9 @@ case $1 in
 		done
 		for app in "${eng_cask[@]}"; do
 			brew_install "$app"
+		done
+		for app in "${eng_apm[@]}"; do
+			apm_install "$app"
 		done
 		# configure vim with custom vimrc
 		if [ ! -f "$HOME/.vimrc" ]; then
