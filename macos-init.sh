@@ -7,13 +7,12 @@
 # modified          : ----------
 # www-site          : http://www.nebulaworks.com
 # description       : Nebulaworks Mac OS configuration script
-# run script in terminal as standard user
 # executor-version  : bash
 ###
 
 ###
 # Nebulaworks Mac OS configuration script
-# run script in terminal as a priviliged user
+# run script in terminal as standard user
 ###
 
 set -e
