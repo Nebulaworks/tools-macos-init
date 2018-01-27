@@ -7,7 +7,7 @@
 # modified          : ----------
 # www-site          : http://www.nebulaworks.com
 # description       : Nebulaworks Mac OS configuration script
-# 										run script in terminal as standard user
+# run script in terminal as standard user
 # executor-version  : bash
 ###
 
@@ -44,7 +44,7 @@ base_cask=(
 eng_cli=(
 	'shellcheck' 'file-formula' 'rsync' 'jq' 'httpie' 'htop-osx' 'nmap' 'tmux' 'openssh'
 	'vim --with-override-system-vi --with-lua --without-perl' 'zsh' 'kubectl' 'terraform'
-	'awscli' 'azure-cli' 'tree'
+	'awscli' 'azure-cli' 'tree' 'stow' 'graphviz'
 );
 
 # engineering cask tools
