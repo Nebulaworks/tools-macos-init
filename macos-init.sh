@@ -43,7 +43,7 @@ base_cask=(
 eng_cli=(
 	'shellcheck' 'file-formula' 'rsync' 'jq' 'httpie' 'htop-osx' 'nmap' 'tmux' 'openssh'
 	'vim --with-override-system-vi --with-lua --without-perl' 'zsh' 'kubectl' 'terraform'
-	'awscli' 'azure-cli' 'tree' 'stow' 'graphviz'
+	'awscli' 'azure-cli' 'tree' 'stow' 'graphviz' 'the_silver_searcher'
 );
 
 # engineering cask tools
