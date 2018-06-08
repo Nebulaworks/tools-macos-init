@@ -27,7 +27,7 @@ base_cli=(
 	'gnu-tar --with-default-names' 'gnu-which --with-default-names' 'ed --with-default-names'
 	'findutils --with-default-names' 'grep --with-default-names' 'wdiff --with-gettext'
 	'ccat' 'gawk' 'gnutls' 'gzip' 'unzip' 'watch' 'wget' 'bash' 'less' 'most' 'make'
-	'git'
+	'git' 'git-lfs'
 );
 
 # base common cask tools
