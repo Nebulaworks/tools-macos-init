@@ -32,7 +32,17 @@ base_cli=(
 
 # base common cask tools
 base_cask=(
-	'slack' 'google-drive-file-stream' 'google-chrome' '1password'
+	'slack' 'google-drive-file-stream' 'google-chrome' '1password' 'zoom' 'quip' 'encryptme' 'microsoft-office'
+);
+
+# marketing cask tools
+mrkt_cask=(
+	'adobe-creative-cloud'
+);
+
+# sales cask tools
+sales_cask=(
+	'dialpad'
 );
 
 ###
@@ -101,8 +111,9 @@ then
   echo "macos system initializer"
   echo ""
   echo "Commands:"
-  echo "  sales      configure system for sales role"
-  echo "  engineer   configure system for engineering role"
+  echo "  sales      configure system for a sales role"
+  echo "  marketing  configure system for a marketing role"
+  echo "  engineer   configure system for an engineering role"
   exit $E_ARG_ERR
 fi
 
@@ -112,6 +123,20 @@ case $1 in
 		# install base apps
 		prereq_prep $1
 		base_install
+		# install sales apps
+		for app in "${sales_cask[@]}"; do
+			brew_cask_install "$app"
+		done
+		;;
+	marketing)
+		echo " I'm better than sales so I need a few other tools!"
+		# install base apps
+		prereq_prep $1
+		base_install
+		# install marketing apps
+		for app in "${mrkt_cask[@]}"; do
+			brew_cask_install "$app"
+		done
 		;;
 	engineer)
 		echo " time to powerup! gimme all that sweet sweet tool luv!!!"
