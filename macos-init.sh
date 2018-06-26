@@ -91,7 +91,7 @@ prereq_prep (){
 	if ! command_exists 'brew'; then
 	  echo "Info: brew is not installed." >&2
 	  echo "Installing HomeBrew package manager.... "
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		printf '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 	echo " continuing to configure system for $*...."
 }
