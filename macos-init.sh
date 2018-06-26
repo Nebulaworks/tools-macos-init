@@ -32,7 +32,7 @@ base_cli=(
 
 # base common cask tools
 base_cask=(
-	'slack' 'google-drive-file-stream' 'google-chrome' '1password' 'zoom' 'quip' 'encryptme' 'microsoft-office'
+	'slack' 'google-drive-file-stream' 'google-chrome' '1password' 'zoomus' 'quip' 'encryptme' 'microsoft-office'
 );
 
 # marketing cask tools
