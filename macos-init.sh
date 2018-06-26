@@ -23,11 +23,6 @@ set -e
 
 # base conmmon cli tools
 base_cli=(
-	'coreutils' 'diffutils' 'gnu-indent --with-default-names' 'gnu-sed --with-default-names'
-	'gnu-tar --with-default-names' 'gnu-which --with-default-names' 'ed --with-default-names'
-	'findutils --with-default-names' 'grep --with-default-names' 'wdiff --with-gettext'
-	'ccat' 'gawk' 'gnutls' 'gzip' 'unzip' 'watch' 'wget' 'bash' 'less' 'most' 'make'
-	'git' 'git-lfs'
 );
 
 # base common cask tools
@@ -51,9 +46,16 @@ sales_cask=(
 
 # engineering cli tools
 eng_cli=(
-	'shellcheck' 'file-formula' 'rsync' 'jq' 'httpie' 'htop-osx' 'nmap' 'tmux' 'openssh'
-	'vim --with-override-system-vi --with-lua --without-perl' 'zsh' 'kubectl' 'terraform'
-	'awscli' 'azure-cli' 'tree' 'stow' 'graphviz' 'the_silver_searcher'
+    'awscli' 'azure-cli' 'bash' 'ccat' 'coreutils' 'diffutils'
+    'ed --with-default-names' 'file-formula' 'findutils --with-default-names'
+    'gawk' 'git' 'git-lfs' 'gnu-indent --with-default-names'
+    'gnu-sed --with-default-names' 'gnu-tar --with-default-names'
+    'gnu-which --with-default-names' 'gnutls' 'graphviz'
+    'grep --with-default-names' 'gzip' 'htop-osx' 'httpie' 'jq' 'kubectl'
+    'less' 'make' 'most' 'nmap' 'openssh' 'rsync' 'shellcheck' 'stow'
+    'terraform' 'the_silver_searcher' 'tmux' 'tree' 'unzip'
+    'vim --with-override-system-vi --with-lua --without-perl' 'watch'
+    'wdiff --with-gettext' 'wget' 'zsh'
 );
 
 # engineering cask tools
