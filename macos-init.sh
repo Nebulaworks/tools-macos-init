@@ -21,15 +21,6 @@ set -e
 # Common tool source list for base systems
 ###
 
-# base conmmon cli tools
-base_cli=(
-	'coreutils' 'diffutils' 'gnu-indent --with-default-names' 'gnu-sed --with-default-names'
-	'gnu-tar --with-default-names' 'gnu-which --with-default-names' 'ed --with-default-names'
-	'findutils --with-default-names' 'grep --with-default-names' 'wdiff --with-gettext'
-	'ccat' 'gawk' 'gnutls' 'gzip' 'unzip' 'watch' 'wget' 'bash' 'less' 'most' 'make'
-	'git' 'git-lfs'
-);
-
 # base common cask tools
 base_cask=(
 	'slack' 'google-drive-file-stream' 'google-chrome' '1password' 'zoomus' 'quip' 'encryptme' 'microsoft-office'
@@ -51,9 +42,16 @@ sales_cask=(
 
 # engineering cli tools
 eng_cli=(
-	'shellcheck' 'file-formula' 'rsync' 'jq' 'httpie' 'htop-osx' 'nmap' 'tmux' 'openssh'
-	'vim --with-override-system-vi --with-lua --without-perl' 'zsh' 'kubectl' 'terraform'
-	'awscli' 'azure-cli' 'tree' 'stow' 'graphviz' 'the_silver_searcher'
+    'awscli' 'azure-cli' 'bash' 'ccat' 'coreutils' 'diffutils'
+    'ed --with-default-names' 'file-formula' 'findutils --with-default-names'
+    'gawk' 'git' 'git-lfs' 'gnu-indent --with-default-names'
+    'gnu-sed --with-default-names' 'gnu-tar --with-default-names'
+    'gnu-which --with-default-names' 'gnutls' 'graphviz'
+    'grep --with-default-names' 'gzip' 'htop-osx' 'httpie' 'jq' 'kubectl'
+    'less' 'make' 'most' 'nmap' 'openssh' 'rsync' 'shellcheck' 'stow'
+    'terraform' 'the_silver_searcher' 'tmux' 'tree' 'unzip'
+    'vim --with-override-system-vi --with-lua --without-perl' 'watch'
+    'wdiff --with-gettext' 'wget' 'zsh'
 );
 
 # engineering cask tools
@@ -89,15 +87,12 @@ prereq_prep (){
 	if ! command_exists 'brew'; then
 	  echo "Info: brew is not installed." >&2
 	  echo "Installing HomeBrew package manager.... "
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		printf '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 	echo " continuing to configure system for $*...."
 }
 
 base_install (){
-	for app in "${base_cli[@]}"; do
-		brew_install "$app"
-	done
 	for app in "${base_cask[@]}"; do
 		brew_cask_install "$app"
 	done
