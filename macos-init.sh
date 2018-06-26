@@ -21,10 +21,6 @@ set -e
 # Common tool source list for base systems
 ###
 
-# base conmmon cli tools
-base_cli=(
-);
-
 # base common cask tools
 base_cask=(
 	'slack' 'google-drive-file-stream' 'google-chrome' '1password' 'zoomus' 'quip' 'encryptme' 'microsoft-office'
@@ -97,9 +93,6 @@ prereq_prep (){
 }
 
 base_install (){
-	for app in "${base_cli[@]}"; do
-		brew_install "$app"
-	done
 	for app in "${base_cask[@]}"; do
 		brew_cask_install "$app"
 	done
