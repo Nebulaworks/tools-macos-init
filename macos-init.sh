@@ -43,15 +43,15 @@ sales_cask=(
 # engineering cli tools
 eng_cli=(
     'awscli' 'azure-cli' 'bash' 'ccat' 'coreutils' 'diffutils'
-    'ed --with-default-names' 'file-formula' 'findutils --with-default-names'
-    'gawk' 'git' 'git-lfs' 'gnu-indent --with-default-names'
-    'gnu-sed --with-default-names' 'gnu-tar --with-default-names'
-    'gnu-which --with-default-names' 'gnutls' 'graphviz'
-    'grep --with-default-names' 'gzip' 'htop-osx' 'httpie' 'jq' 'kubectl'
+    'ed' 'file-formula' 'findutils'
+    'gawk' 'git' 'git-lfs' 'gnu-indent'
+    'gnu-sed' 'gnu-tar'
+    'gnu-which' 'gnutls' 'graphviz'
+    'grep' 'gzip' 'htop-osx' 'httpie' 'jq' 'kubectl'
     'less' 'make' 'most' 'nmap' 'openssh' 'rsync' 'shellcheck' 'stow'
     'terraform' 'the_silver_searcher' 'tmux' 'tree' 'unzip'
-    'vim --with-override-system-vi --with-lua --without-perl' 'watch'
-    'wdiff --with-gettext' 'wget' 'zsh'
+    'vim' 'watch'
+    'wdiff' 'wget' 'zsh'
 );
 
 # engineering cask tools
